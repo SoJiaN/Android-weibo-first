@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:id="@+id/fl_content"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+    </FrameLayout>
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="wrap_content"
+        android:layout_height="1px"
+        android:background="@color/txt_gray" />
+    <RadioGroup 
+        android:id="@+id/rg_tab"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:layout_gravity="bottom"
+        android:background="#fafafa"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        >
+        <RadioButton
+            android:id="@+id/rb_home"
+            style="@style/RadioButtonBottomTab"
+            android:drawableTop="@drawable/icon_home"
+            android:checked="true"
+            android:text="首页"
+            />
+        <RadioButton
+            android:id="@+id/rb_message"
+            style="@style/RadioButtonBottomTab"
+            android:button="@null" 
+            android:drawableTop="@drawable/icon_meassage"
+            android:text="消息"
+            />
+        <ImageView
+            android:id="@+id/iv_add"
+            android:layout_width="56dp"
+            android:layout_height="40dp"
+            android:padding="8dp"
+            android:background="@drawable/correct_oran_sel" 
+            android:src="@drawable/icon_add"
+            />
+        <RadioButton 
+            android:id="@+id/rb_search"
+            style="@style/RadioButtonBottomTab"
+            android:drawableTop="@drawable/icon_square"
+            android:text="发现"
+            />
+        <RadioButton 
+            android:id="@+id/rb_user"
+            style="@style/RadioButtonBottomTab"
+            android:drawableTop="@drawable/icon_selfinfo"
+            android:text="我"
+            />
+        
+    </RadioGroup>
+
+</LinearLayout>

@@ -1,0 +1,78 @@
+package com.song.sjweibo.utils;
+
+import android.app.Activity;
+import android.content.Context;
+import android.util.DisplayMetrics;
+/**
+ * 工具类
+ * 获取屏幕宽度，高度
+ * px，dp，sp之间的转换操作
+ * @author lenovo
+ *
+ */
+public class DisplayUtils {
+	/**
+	 * 将px值转换为dp或dp值
+	 */
+	public static int px2dp(Context context, float pxValue) {
+		final float scale = context.getResources().getDisplayMetrics().density;
+		/**
+		 * 这里的+0.5f相当于一个简单的四舍五入算法
+		 */
+		return (int) (pxValue / scale + 0.5f);
+	}
+
+	/**
+	 * 将dp或dp值转换为px值
+	 */
+	public static int dp2px(Context context, float dpValue) {
+		final float scale = context.getResources().getDisplayMetrics().density;
+		return (int) (dpValue * scale + 0.5f);
+	}
+
+	/**
+	 * 将px值转换为sp值
+	 */
+	public static int px2sp(Context context, float pxValue) {
+		final float fontScale = context.getResources().getDisplayMetrics().scaledDensity;
+		return (int) (pxValue / fontScale + 0.5f);
+	}
+
+	/**
+	 * 将sp值转换为px值
+	 */
+	public static int sp2px(Context context, float spValue) {
+		final float fontScale = context.getResources().getDisplayMetrics().scaledDensity;
+		return (int) (spValue * fontScale + 0.5f);
+	}
+
+	/**
+	 * 将sp值转换为dp值
+	 */
+	public static int sp2dp(Context context, float spValue) {
+		DisplayMetrics metrics = context.getResources().getDisplayMetrics();
+		float scale = metrics.scaledDensity / metrics.density;
+		return (int) (spValue / scale + 0.5f);
+	}
+
+	/**
+	 * 将dp值转换为sp值
+	 */
+	public static int dp2sp(Context context, float dpValue) {
+		DisplayMetrics metrics = context.getResources().getDisplayMetrics();
+		float scale = metrics.scaledDensity / metrics.density;
+		return (int) (dpValue * scale + 0.5f);
+	}
+	
+	public static int getScreenWidthPixels(Activity context) {
+		 DisplayMetrics metric = new DisplayMetrics();
+		 context.getWindowManager().getDefaultDisplay().getMetrics(metric);
+		return metric.widthPixels;
+	}
+	
+	public static int getScreenHeightPixels(Activity context) {
+		DisplayMetrics metric = new DisplayMetrics();
+		context.getWindowManager().getDefaultDisplay().getMetrics(metric);
+		return metric.heightPixels;
+	}
+}
